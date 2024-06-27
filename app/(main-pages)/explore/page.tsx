@@ -48,23 +48,37 @@ const ToolsPage = ({searchParams}: {
 
   return (
     <>
-      <div className='flex justify-center pt-6 pb-6 inset-x-0 top-0 fixed bg-white z-40 mb-5'>
-        <div className='relative flex items-center justify-center w-11/12  '>
+      {/* <div className='flex justify-center pt-6 pb-6 inset-x-0 top-0 fixed bg-white z-40 mb-5'>
+        <div className='relative flex items-center justify-center w-11/12'>
           <MagnifyingGlassIcon className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform stroke-2 cursor-pointer' />
           <form onSubmit={handleSearch}>
             <Input
               onChange={(event) => setSearch(event.target.value)}
               value= {search}
               placeholder='What do you wish to rent?'
-              className='shadow-md pl-10 focus-visible:ring-offset-0 focus-visible:ring-0 rounded-3xl h-12 cursor-pointer'
+              className='shadow-md pl-10 focus-visible:ring-offset-0 focus-visible:ring-0 rounded-3xl h-12 cursor-pointer '
             />
-            {/* <button className='bg-blue-50'>Search</button> */}
           </form>
         </div>
 
+      </div> */}
+
+      <div className='flex justify-center pt-6 pb-6 inset-x-0 top-0 fixed bg-white z-40 mb-5'>
+        <div className='relative flex items-center justify-center '>
+          <MagnifyingGlassIcon className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform stroke-2 cursor-pointer' />
+          <form onSubmit={handleSearch}>
+            <Input
+              onChange={(event) => setSearch(event.target.value)}
+              value={search}
+              placeholder='What do you wish to rent?'
+              className='shadow-md pl-10 focus-visible:ring-offset-0 focus-visible:ring-0 rounded-3xl h-12 w-80 cursor-pointer'
+            />
+          </form>
+        </div>
       </div>
-      <div className='container mx-auto px-2 py-2'>
-        <h1 className='text-2xl font-bold mb-4 text-center'>
+
+      <div className='container mx-auto px-2 py-2 mt-30'>
+        <h1 className='text-2xl font-bold mb-3 mt-3 text-center'>
         Discover Your Ideal Tool Here!
         </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>

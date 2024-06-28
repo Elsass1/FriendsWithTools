@@ -34,6 +34,26 @@ const ToolsPage = ({
     fetchTools();
   }, [query]);
 
+
+  useEffect(() => {
+    const fetchTools = async () => {
+      try {
+        const response = await fetch(`/api/search?query=${query}`);
+        const data: ToolCard[] = await response.json();
+        setTools(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to fetch tools:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchTools();
+  }, [query]);
+
+
+
+
   if (loading) {
     return <div>Loading...</div>;
   }

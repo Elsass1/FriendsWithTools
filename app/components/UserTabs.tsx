@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,7 +19,15 @@ import {
   TabsTrigger,
 } from '@/components/ui/tabs';
 
-const UserTabs = () => {
+import { User } from '../lib/types';
+
+
+export interface UserDetailsProps {
+  userInformation: User
+}
+
+const UserTabs = ({userInformation}:UserDetailsProps ) => {
+  console.log('name', userInformation.name);
   return (
     <Tabs defaultValue="account" className="w-full h-full">
       <TabsList className="grid w-full grid-cols-2">
@@ -34,6 +43,7 @@ const UserTabs = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-12">
+            <div><h1>Hello</h1></div>
             <div className="space-y-1">
               <Label htmlFor="name">Name</Label>
               <Input id="name" />

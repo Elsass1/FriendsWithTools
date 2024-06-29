@@ -100,34 +100,35 @@ const UserTabs = ({userInformation}:UserDetailsProps ) => {
           <TabsTrigger value="account">Account</TabsTrigger>
           <TabsTrigger value="password">Password</TabsTrigger>
         </TabsList>
-        <TabsContent value="account">
-          <Card>
-            <CardHeader className='mt-5'>
-              <CardTitle>Account</CardTitle>
-              <CardDescription>
+        <form action="">
+          <TabsContent value="account">
+            <Card>
+              <CardHeader className='mt-5'>
+                <CardTitle>Account</CardTitle>
+                <CardDescription>
               Make changes to your account here. Click save when you're done.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-12">
-              <div><h1>Hello {userInformation.name}</h1></div>
-              <div className="space-y-1">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" />
-              </div>
-              <div className="space-y-1 grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="profile-pic">Profile Picture</Label>
-                <Input type='file' id="profile-pic" />
-              </div>
-            </CardContent>
-            <CardFooter className='mt-4 mb-4'>
-              <Button className='bg-darkGreen'>Save changes</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-12">
+                <div className="space-y-1">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" />
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" />
+                </div>
+                <div className="space-y-1 grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor="profile-pic">Profile Picture</Label>
+                  <Input type='file' id="profile-pic" />
+                </div>
+              </CardContent>
+              <CardFooter className='mt-4 mb-4'>
+                <Button className='bg-darkGreen'>Save changes</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </form>
         <TabsContent value="password">
           <Card>
             <CardHeader className='mt-5'>

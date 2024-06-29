@@ -6,7 +6,7 @@ import prisma from './db';
 // Define your Prisma client instance
 // const prisma = new PrismaClient();
 
-async function main() {
+async function main () {
   const users: User[] = [
     {
       id: uuidv4(),
@@ -19,7 +19,8 @@ async function main() {
       reviews: [],
       listings: [],
       messages: [],
-      toolrequests: []
+      toolrequests: [],
+      createdAt: new Date(),
     },
     {
       id: uuidv4(),
@@ -32,7 +33,8 @@ async function main() {
       reviews: [],
       listings: [],
       messages: [],
-      toolrequests: []
+      toolrequests: [],
+      createdAt: new Date()
     }
   ];
 
@@ -173,7 +175,7 @@ async function main() {
       }
     });
   }
-  
+
   for (const category of toolCategories) {
     await prisma.toolCategory.create({
       data: {

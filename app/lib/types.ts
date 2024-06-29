@@ -12,6 +12,7 @@ export type User = {
   listings: ToolCard[];
   messages: Message[];
   toolrequests: ToolRequest[];
+  createdAt: Date;
 };
 
 export type ToolCard = {

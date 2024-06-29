@@ -27,7 +27,7 @@ export interface UserDetailsProps {
 }
 
 const UserTabs = ({userInformation}:UserDetailsProps ) => {
-  console.log('name', userInformation.name);
+  console.log('hello from the user tabs', userInformation.name);
   return (
     <Tabs defaultValue="account" className="w-full h-full">
       <TabsList className="grid w-full grid-cols-2">

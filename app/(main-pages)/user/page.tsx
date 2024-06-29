@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar';
 import UserTabs from '@/app/components/UserTabs';
 import { User } from '@/app/lib/types';
-
+import DateStyling from '@/app/components/DateStyling';
 
 const UserPage = () => {
 
@@ -39,8 +39,10 @@ const UserPage = () => {
 
   console.log('User info state:', userInformation);
 
-  userInformation.map((userInfo) => console.log('user name', userInfo.name));
+  userInformation.map((userInfo) => console.log('type of createdAt',typeof userInfo.createdAt));
+  const formattedDate = connectedUser?.createdAt ? <DateStyling dateString={connectedUser.createdAt} /> : 'Unknown';
 
+  // console.log(formattedDate);
   return (
     <div className='flex flex-col justify-center'>
       <header className=' flex row-span-1 row py-4 px-8  border rounded border-solid border-zinc-400  bg-darkGreen items-center justify-start mb-1'>
@@ -50,11 +52,11 @@ const UserPage = () => {
         </Avatar>
         <div className='chat-info flex-col'>
           <p className='font-bold text-xl text-white'>{connectedUser?.name}{' '}{connectedUser?.lastName}</p>
-          <p className='text-xs text-slate-50'>Created on June 25th, 2024 {connectedUser.}</p>
+          <p className='text-xs text-slate-50'>Created on {formattedDate}  </p>
         </div>
       </header>
-      {userInformation ?
-        <UserTabs userInformation={userInformation} /> : <p>no user</p>
+      {connectedUser ?
+        <UserTabs userInformation={connectedUser} /> : <p>no user</p>
       }
       <Button variant='destructive' className='flex justify-self-center w-52 ml-[5.5rem] my-3'>Log out</Button>
     </div>

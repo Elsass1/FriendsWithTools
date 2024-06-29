@@ -25,6 +25,7 @@ model User {
   listings       ToolCard[]
   messages       Message[]
   toolrequests   ToolRequest[]
+  createdAt DateTime @default(now())
 }
 
 model ToolCard {

@@ -13,7 +13,7 @@ const ToolCardComponent = ({ tool, query }: ToolCardProps) => {
   return (
     <div className=' border-slate-50 border-4 p-4 rounded-xl shadow-md flex flex-col items-center m-4'>
       <div
-        className='relative h-64 rounded-m overflow-hidden bg-cover w-80 bg-center '
+        className='relative h-64 rounded-m overflow-hidden bg-cover w-80 bg-center rounded-xl md: mt-2'
         style={{ backgroundImage: `url(${ tool.picture|| defaultImage})` }}
       >
         <div className='relative'>

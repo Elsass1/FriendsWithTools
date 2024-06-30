@@ -14,9 +14,9 @@ const SearchBar = () => {
   );
 
 
-  useEffect(() => {
-    fetchCategories();
-  }, [fetchCategories]);
+  // useEffect(() => {
+  //   fetchCategories();
+  // }, [fetchCategories]);
 
   useEffect(() => {
     if (categories.length > 0) {

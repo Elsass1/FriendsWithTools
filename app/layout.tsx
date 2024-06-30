@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
+
+import { CategoriesStoreProvider } from './lib/providers/categories-store-provider';
+
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
@@ -20,7 +23,7 @@ export default function RootLayout ({
   return (
     <html lang='en' className='h-full'>
       <body className={`${roboto.className}, h-full`}>
-        {children}
+        <CategoriesStoreProvider>{children}</CategoriesStoreProvider>
       </body>
     </html>
   );

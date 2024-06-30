@@ -1,13 +1,33 @@
 'use client';
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Input } from '@/components/ui/input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
+import { useCategoriesStore } from '../lib/providers/categories-store-provider';
+import { link } from 'fs';
 
-// use-debounce is not working!
-// work in progress
 const SearchBar = () => {
+
+  const { categories, fetchCategories } = useCategoriesStore(
+    (state) => state,
+  );
+
+
+  useEffect(() => {
+    fetchCategories();
+  }, [fetchCategories]);
+
+  useEffect(() => {
+    if (categories.length > 0) {
+      categories.forEach(category => console.log(category.categoryName));
+    }
+    console.log(categories);
+  }, [categories]);
+
+
+
+
   const searchParams = useSearchParams();
   const pathName = usePathname();
   const router = useRouter();
@@ -30,6 +50,12 @@ const SearchBar = () => {
           className='shadow-md pl-10 focus-visible:ring-offset-0 focus-visible:ring-0 rounded-3xl h-12 cursor-pointer'
         />
       </div>
+      <div>
+        <h1>Categories:</h1>
+      </div>
+      <ul>
+        {categories.map((category) => (<li key={category.id}>{category.categoryName}</li>))}
+      </ul>
     </div>
   );
 };

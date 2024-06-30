@@ -38,24 +38,10 @@ const Form = () => {
     toolrequests: []
 
   });
-  // const [categories, setCategories] = useState<ToolCategory[]>([]);
+
   const [image, setImage] = useState<File | null>(null); // State to store the selected image file
   const router= useRouter();
   useEffect(() => {
-    // const fetchCategory = async () => {
-    //   try {
-    //     const response = await fetch('/api/categories');
-    //     if (!response.ok) {
-    //       throw new Error('Failed to fetch categories');
-    //     }
-    //     const data: ToolCategory[] = await response.json();
-    //     setCategories(data);
-    //   } catch (error) {
-    //     console.error('Failed to fetch categories:', error);
-    //   }
-    // };
-
-    // fetchCategory();
     if (categories.length > 0) {
       categories.forEach(category => console.log(category.categoryName));
     }
@@ -154,9 +140,6 @@ const Form = () => {
 
   return (
     <>
-      <div>
-        <ul>{categories.map((category) => (<li key={category.id}>{category.categoryName}</li>))}</ul>
-      </div>
       <header className='flex justify-start pt-4 pl-5  border-grey h-20 shadow-md mb-5 bg-slate-200 '>
         <Link href='/rented'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 ">

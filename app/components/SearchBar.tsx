@@ -40,7 +40,7 @@ const SearchBar = () => {
   }, 500);
 
   return (
-    <div className='flex justify-center pt-6 pb-6 inset-x-0 top-0 fixed bg-white z-40 mb-5'>
+    <div className=' pt-6 pb-6 inset-x-0 top-0 bg-white  mb-5' >
       <div className='relative flex items-center justify-center w-11/12  '>
         <MagnifyingGlassIcon className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform stroke-2 cursor-pointer' />
         <Input
@@ -50,12 +50,7 @@ const SearchBar = () => {
           className='shadow-md pl-10 focus-visible:ring-offset-0 focus-visible:ring-0 rounded-3xl h-12 cursor-pointer'
         />
       </div>
-      <div>
-        <h1>Categories:</h1>
-      </div>
-      <ul>
-        {categories.map((category) => (<li key={category.id}>{category.categoryName}</li>))}
-      </ul>
+
     </div>
   );
 };

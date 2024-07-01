@@ -26,7 +26,7 @@ export default function RootLayout ({
           <div className='w-full flex justify-center'>
             <SearchBar/>
           </div>
-          <div className='w-full sm:w-auto flex justify-center'>
+          <div className='w-full flex justify-center'>
             <CategoriesCarousel/>
           </div>
         </div>

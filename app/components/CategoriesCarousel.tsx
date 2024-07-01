@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   Carousel,
@@ -6,20 +7,24 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { useCategoriesStore } from '../lib/providers/categories-store-provider';
 
-// flex justify-center pt-6 pb-6 inset-x-0 top-0 bg-white fixed mb-5'
 
 const CategoriesCarousel = () => {
-  return (
-    <div className=''>
-      <Carousel
+  const {categories} = useCategoriesStore(
+    (state) => state,
+  );
 
+  return (
+    <div>
+      <Carousel className="w-full"
       >
         <CarouselContent>
-          <CarouselItem>Alpha</CarouselItem>
-          <CarouselItem>Bravo</CarouselItem>
-          <CarouselItem>Charli</CarouselItem>
-          <CarouselItem>Delta</CarouselItem>
+          {
+            categories.map((category) =>(
+              <CarouselItem key={category.id} className="text-darkGreen font-semibold  sm:basis-2/3 md:basis-1/2 lg:basis-1/3  cursor-pointer">{category.categoryName}</CarouselItem>
+            ))
+          }
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

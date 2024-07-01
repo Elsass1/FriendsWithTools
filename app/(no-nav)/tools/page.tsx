@@ -121,17 +121,17 @@ export default ToolsPage;
 //   //   return tool;
 //   // }
 
-//   const [toolsData, setToolsData] = useState<ToolCard[]>([]); 
+//   const [toolsData, setToolsData] = useState<ToolCard[]>([]);
 //   console.log('Initial toolsData:', toolsData);
 
 //   useEffect(() => {
-    
+
 //     fetch('/api/tool')
 //       .then(response => response.json())
 //       .then(data => {setToolsData(data); console.log(data)})
 //       .catch(error => console.error('Error fetching tools:', error));
 //   }, []);
-//   // console.log('Current toolsData:', toolsData); 
+//   // console.log('Current toolsData:', toolsData);
 
 //   return (
 //     <div>

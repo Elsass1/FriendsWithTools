@@ -6,7 +6,7 @@ import prisma from './db';
 // Define your Prisma client instance
 // const prisma = new PrismaClient();
 
-async function main() {
+async function main () {
   const users: User[] = [
     {
       id: uuidv4(),
@@ -46,7 +46,27 @@ async function main() {
       id: uuidv4(),
       categoryName: 'Gardening Tools',
       tools: []
-    }
+    },
+    {
+      id: uuidv4(),
+      categoryName: 'Home Appliances',
+      tools: []
+    },
+    {
+      id: uuidv4(),
+      categoryName: 'Kitchen Appliances',
+      tools: []
+    },
+    {
+      id: uuidv4(),
+      categoryName: 'Woodwork',
+      tools: []
+    },
+    {
+      id: uuidv4(),
+      categoryName: 'DIY',
+      tools: []
+    },
   ];
 
   const toolCards: ToolCard[] = [
@@ -173,7 +193,7 @@ async function main() {
       }
     });
   }
-  
+
   for (const category of toolCategories) {
     await prisma.toolCategory.create({
       data: {

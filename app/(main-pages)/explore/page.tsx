@@ -10,17 +10,19 @@ const ToolsPage = ({
 }: {
   searchParams?: {
     query?: string;
+    category?: string;
   };
 
 }) => {
   const [tools, setTools] = useState<ToolCard[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const query = searchParams?.query || '';
+  const category = searchParams?.category || '';
 
   useEffect(() => {
     const fetchTools = async () => {
       try {
-        const response = await fetch(`/api/tools?query=${query}`);
+        const response = await fetch(`/api/tools?query=${query}&category=${query}`);
         const data: ToolCard[] = await response.json();
         setTools(data);
         setLoading(false);
@@ -31,7 +33,7 @@ const ToolsPage = ({
     };
 
     fetchTools();
-  }, [query]);
+  }, [query, category]);
 
   useEffect(() => {
     const fetchTools = async () => {

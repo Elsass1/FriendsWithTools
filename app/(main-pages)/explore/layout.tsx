@@ -21,13 +21,14 @@ export default function RootLayout ({
 }) {
   return (
     <div >
-      <div className='fixed z-40 flex flex-row justify-center bg-white w-full px-4 sm:px-6 lg:px-8'>
-        <div className='flex flex-col sm:flex-row items-center justify-center w-full max-w-screen-lg mx-auto space-y-4 sm:space-y-0 sm:space-x-4'>
-          <div className='w-full sm:w-2/3 lg:w-1/2'>
+      <div className='fixed  z-40 w-full bg-white px-4 sm:px-6 lg:px-8'>
+        <div className='w-full'>
+          <div className='w-full flex justify-center'>
             <SearchBar/>
           </div>
-
-          <CategoriesCarousel/>
+          <div className='w-full sm:w-auto flex justify-center'>
+            <CategoriesCarousel/>
+          </div>
         </div>
       </div>
 
